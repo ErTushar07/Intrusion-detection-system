@@ -20,7 +20,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install pylint
       - name: Run pylint
-        run: |
-          pylint .
-          pylint $(git ls-files '*.py')
+       run: |
+       pylint intrusion_detection_system/
+       pylint $(git ls-files '*.py')
+
 
