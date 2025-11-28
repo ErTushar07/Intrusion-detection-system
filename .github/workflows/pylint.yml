@@ -23,7 +23,5 @@ jobs:
         run: |
           pylint your_module/
           pylint $(git ls-files '*.py')
-nt
-        run: pylint your_module/
 
         pylint $(git ls-files '*.py')
