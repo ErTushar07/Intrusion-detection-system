@@ -24,4 +24,3 @@ jobs:
           pylint your_module/
           pylint $(git ls-files '*.py')
 
-        pylint $(git ls-files '*.py')
