@@ -27,7 +27,7 @@ def verify_imports():
             success_count += 1
         except ImportError as e:
             print(f"✗ {module} - Import failed: {e}")
-        except Exception as e:
+        except (ImportError, ModuleNotFoundError) as e:
             print(f"✗ {module} - Error: {e}")
     
     print(f"\nImport verification: {success_count}/{len(modules)} modules imported successfully")
@@ -70,7 +70,7 @@ def main():
     imports_ok = verify_imports()
     print()
     files_ok = verify_file_structure()
-    
+
     print("\n" + "=" * 40)
     if imports_ok and files_ok:
         print("✓ All verifications passed! The project structure is complete.")
@@ -84,3 +84,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
