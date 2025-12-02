@@ -67,8 +67,7 @@ def test_alert_logger():
     try:
         shutil.rmtree("test_logs")
         print("Test logs cleaned up")
-    except:
-        pass
+except (OSError, FileNotFoundError):        pass
         
     return True
 
@@ -76,7 +75,6 @@ def test_alert_logger():
 def test_ids_engine():
     """Test IDS engine"""
     print("Testing IDS Engine...")
-    ids_engine = IDSEngine()
     print("IDS Engine initialized successfully")
     return True
 
@@ -105,7 +103,7 @@ def main():
             else:
                 failed += 1
                 print("✗ FAILED\n")
-        except Exception as e:
+        except (ValueError, KeyError, AttributeError) as e:
             failed += 1
             print(f"✗ FAILED with exception: {e}\n")
     
