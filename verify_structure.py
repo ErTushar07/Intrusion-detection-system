@@ -25,11 +25,8 @@ def verify_imports():
             __import__(module)
             print(f"✓ {module} - Import successful")
             success_count += 1
-        except ImportError as e:
-            print(f"✗ {module} - Import failed: {e}")
-        except ModuleNotFoundError as e:
-            print(f"✗ {module} - Error: {e}")
-    
+except (ModuleNotFoundError, ImportError) as e:
+            print(f"X {module} - Import failed: {e}")    
     print(f"\nImport verification: {success_count}/{len(modules)} modules imported successfully")
     return success_count == len(modules)
 
