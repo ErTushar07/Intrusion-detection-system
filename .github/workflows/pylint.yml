@@ -21,7 +21,6 @@ jobs:
           pip install pylint
       - name: Run pylint
         run: |
-          pylint intrusion_detection_system/
           pylint $(git ls-files '*.py')
 
 
