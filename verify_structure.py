@@ -66,7 +66,7 @@ def main():
     """Main verification function"""
     print("Verifying IDS Project Structure\n")
     print("=" * 40)
-    
+
     imports_ok = verify_imports()
     print()
     files_ok = verify_file_structure()
@@ -84,4 +84,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
