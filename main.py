@@ -12,6 +12,7 @@ from ids.core.ids_engine import IDSEngine
 
 
 def main():
+        """Main entry point for the IDS."""
     parser = argparse.ArgumentParser(description='Python-based Intrusion Detection System')
     parser.add_argument('--mode', choices=['live', 'file'], default='live',
                         help='Monitoring mode: live traffic or from PCAP file')
@@ -40,9 +41,10 @@ def main():
             
     except KeyboardInterrupt:
         print("\nStopping IDS...")
-    except Exception as e:
+    except (FileNotFoundError, OSError, ValueError) as e:
         print(f"Error running IDS: {e}")
         sys.exit(1)
+        
 
 
 if __name__ == "__main__":
